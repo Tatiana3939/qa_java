@@ -1,7 +1,10 @@
 package com.example;
 
+import org.junit.Rule;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -22,13 +25,22 @@ public class LionTestParam{
     public static Object[][] getLionGender() {
         return new Object[][]{
                 {"Самец", true},
-                {"Самка", false}
+                {"Самка", false},
+                {"Мужчина", false}
         };
     }
 
     @Test
-    public void isLionMaleTest() throws Exception {
+    public void isLionMaleTest() {
+        try {
         Lion lion = new Lion (sex, feline);
+        boolean actual = lion.doesHaveMane();
+        assertTrue(expected == actual);
         assertEquals(expected, lion.doesHaveMane());
+        }
+        catch (Exception exception){
+            assertTrue(!sex.equals("Самец") && !sex.equals("Самка"));
+            System.out.println("Произошла ошибка!");
+        }
     }
 }

@@ -1,13 +1,11 @@
 package com.example;
 
-import junit.framework.TestCase;
 import org.junit.Test;
-
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class FelineTest extends TestCase {
+public class FelineTest {
     @Test
     public void isEatLikePredatorTest() throws Exception {
         Feline feline = new Feline();

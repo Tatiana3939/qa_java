@@ -18,16 +18,16 @@ public class LionTest {
     @Test
     public void isLionManTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        boolean expectedHasMane = true;
-        boolean actualHasMane = lion.doesHaveMane();
-        assertEquals(expectedHasMane, actualHasMane);
+        boolean expected = true;
+        boolean actual = lion.doesHaveMane();
+        assertTrue(expected == actual);
     }
     @Test
     public void isLionHaveKittensTest() throws Exception {
         Lion lion = new Lion("Самец", feline);
-        int expectedGetKittens = 0;
-        int actualGetKittens = lion.getKittens();
-        assertEquals(expectedGetKittens, actualGetKittens);
+        int expected = 0;
+        int actual= lion.getKittens();
+        assertEquals(expected, actual);
     }
 
     @Test
