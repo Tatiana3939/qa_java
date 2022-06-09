@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -41,6 +42,17 @@ public class LionTestParam{
         catch (Exception exception){
             assertTrue(!sex.equals("Самец") && !sex.equals("Самка"));
             System.out.println("Произошла ошибка!");
+        }
+    }
+
+    @Test(expected = AssertionError.class)
+    public void exceptionLionSexTest() throws AssertionError {
+        try {
+            Lion lion = new Lion(" ", feline);
+            Assert.fail("Expected AssertionError");
+        }
+        catch (Exception thrown) {
+            Assert.assertNotEquals("Используйте допустимые значения пола животного - самец или самка", thrown.getMessage());
         }
     }
 }
