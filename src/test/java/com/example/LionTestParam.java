@@ -23,17 +23,22 @@ public class LionTestParam{
     public static Object[][] getLionGender() {
         return new Object[][]{
                 {"Самец", true},
-                {"Самка", false}
+                {"Самка", false},
+                {"Мужчина", false}
         };
     }
 
     @Test
-    public void isLionMaleTest() throws Exception {
+    public void isLionMaleTest() {
+        try {
         Lion lion = new Lion (sex, feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected, actual);
         assertEquals(expected, lion.doesHaveMane());
         System.out.println(actual);
+        }
+        catch (Exception exception){
+            System.out.println(exception);
+        }
     }
-
 }
